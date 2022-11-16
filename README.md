@@ -14,7 +14,7 @@ Briefly, the process followed by eM2dRNAs is:
    - Whether a substructure is the only child of the target structure. (e.g. ID1)
 3. The *participation* of each problem is calculated to proportionally distribute the given execution time (global stopping criterion) among the different RNAinv problems to be solved.
 4. Topological sorting of the RNAinv problems to be solved. This is a lineal ordering of all the nodes of the directed acyclic graph previously created.
-5. Solve each RNAinv problem independently using a modified version of the m2dRNAs algorithm, which is able to manage the subproblems contained by the input substructure. m2dRNAs algorithm receives as input parameters the substructure to be solved and the stopping criterion.  The output will be a set of all the found RNA sequences, which will be saved. After the resolution of each problem, the participation of every remaining problem must be recalculated, since it is possible that the assigned time is not exhausted. This way, easier problems do not waste time that could be needed to solve more complex problems. If m2dRNAs fails to solve a subproblem, eM2dRNAs will eliminate that subproblem and restructure the graph
+5. Solve each RNAinv problem independently using a modified version of the m2dRNAs algorithm, which is able to manage the subproblems contained by the input substructure. m2dRNAs algorithm receives as input parameters the substructure to be solved and the stopping criterion. The output will be a set of all the found RNA sequences, which will be saved. After the resolution of each problem, the participation of every remaining problem must be recalculated, since it is possible that the assigned time is not exhausted. This way, easier problems do not waste time that could be needed to solve more complex problems. If m2dRNAs fails to solve a subproblem, eM2dRNAs will eliminate that subproblem and restructure the graph.
 6. The last problem to be solved will be the one containing the target structure so, after solving it, all the RNA sequences will be reported.
 
 
@@ -29,7 +29,7 @@ the binary tournament) and stopping criterion based on time (24 hours). All stru
 Results were compared against other RNA inverse folding methods.
 
 
-### Installation
+### Instructions
 To compile and execute eM2dRNAs in your local machine the following are needed: 
 
 * [ViennaRNA package](https://www.tbi.univie.ac.at/RNA/) 
@@ -37,7 +37,7 @@ To compile and execute eM2dRNAs in your local machine the following are needed:
 
 #### Installation guide
 
-(For ubuntu 18.04, change whatever is needed in your system).
+(For ubuntu 18.04, change whatever fits for your system).
 
 Install required packages:
 
