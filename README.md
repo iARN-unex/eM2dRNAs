@@ -4,6 +4,7 @@ eM2dRNAs is a Multiobjective Evolutionary Algorithm (MOEA) to solve the RNA inve
 
 eM2dRNAs is an enhanced version of m2dRNAs, a previously developed MOEA approach to that problem. The main improvement is the recursive decomposition of the target structure into substructures, smaller and consequently easier to solve than the original one. These substructures will be solved independently of each other and subsequently combined to obtain a complete nucleotide sequence solution. The algorithm responsible for solving each substructure is m2dRNAs.
 
+### Algorithm
 Briefly, the process followed by eM2dRNAs is:
 
 1. Decompose the target structure into substructures (RNAinv problems) in order to create a directed acyclic graph.
@@ -13,10 +14,20 @@ Briefly, the process followed by eM2dRNAs is:
    - Whether a substructure is the only child of the target structure. (e.g. ID1)
 3. The *participation* of each problem is calculated to proportionally distribute the given execution time (global stopping criterion) among the different RNAinv problems to be solved.
 4. Topological sorting of the RNAinv problems to be solved. This is a lineal ordering of all the nodes of the directed acyclic graph previously created.
-5. Solve each RNAinv problem independently using a modified version of the m2dRNAs algorithm, which is able to manage the subproblems contained by the input substructure. M2dRNAs algorithm receives as input parameters the substructure to be solved and the stopping criterion.  The output will be a set of all the found RNA sequences, that will be saved. After the resolution of each problem, the participation of every remaining problem must be recalculated, since it is possible that the assigned time is not exhausted. This way, easier problems do not waste time that could be needed to solve more complex problems. If m2dRNAs fails to solve a subproblem, eM2dRNAs will eliminate that subproblem and restructure the graph
+5. Solve each RNAinv problem independently using a modified version of the m2dRNAs algorithm, which is able to manage the subproblems contained by the input substructure. m2dRNAs algorithm receives as input parameters the substructure to be solved and the stopping criterion.  The output will be a set of all the found RNA sequences, which will be saved. After the resolution of each problem, the participation of every remaining problem must be recalculated, since it is possible that the assigned time is not exhausted. This way, easier problems do not waste time that could be needed to solve more complex problems. If m2dRNAs fails to solve a subproblem, eM2dRNAs will eliminate that subproblem and restructure the graph
 6. The last problem to be solved will be the one containing the target structure so, after solving it, all the RNA sequences will be reported.
 
+
 ![eM2dRNAs-image](https://user-images.githubusercontent.com/118007536/201639695-5b13b959-b435-4cbc-b50a-ba12f1866006.png)
+
+### Comparative Study
+The performance of eM2dRNAs was evaluated with the widely used Eterna100 benchmark in its V1 and V2 version, as well as both Turner1999 and Turner2004 energy parameters sets. Input target structures can be found in [data/input](data/input) folder.
+
+The parameter configuration of eM2dRNAs was: population size of 52 individuals (eM2dRNAs requires a population size multiple of 4 to perform
+the binary tournament) and stopping criterion based on time (24 hours). All structures were attempted ten times by each combination of Eterna100-version/Turner-version. Resulting sequences can be found in [data/output](data/output) folder.
+
+Results were compared against other RNA inverse folding methods.
+
 
 ### Installation
 To compile and execute eM2dRNAs in your local machine the following are needed: 
@@ -24,7 +35,7 @@ To compile and execute eM2dRNAs in your local machine the following are needed:
 * [ViennaRNA package](https://www.tbi.univie.ac.at/RNA/) 
 * RNALib library
 
-#### Instructions
+#### Installation guide
 
 (For ubuntu 18.04, change whatever is needed in your system).
 
@@ -52,7 +63,7 @@ make
 sudo make install
 ```
 
-Inside eM2dRNAs-source folder, compile:
+Inside [src](src) folder, compile:
 
 ```
 make clean
