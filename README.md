@@ -20,11 +20,10 @@ Briefly, the process followed by eM2dRNAs is:
 
 ![eM2dRNAs-image](https://user-images.githubusercontent.com/118007536/201639695-5b13b959-b435-4cbc-b50a-ba12f1866006.png)
 
-### Comparative Study
+### Comparative Study.
 The performance of eM2dRNAs was evaluated with the widely used Eterna100 benchmark in its V1 and V2 version, as well as both Turner1999 and Turner2004 energy parameters sets. Input target structures can be found in [data/input](data/input) folder.
 
-The parameter configuration of eM2dRNAs was: population size of 52 individuals (eM2dRNAs requires a population size multiple of 4 to perform
-the binary tournament) and stopping criterion based on time (24 hours). All structures were attempted ten times by each combination of Eterna100-version/Turner-version. Resulting sequences can be found in [data/output](data/output) folder.
+The parameter configuration of eM2dRNAs was: population size of 52 individuals (eM2dRNAs requires a population size multiple of 4 to perform the binary tournament) and stopping criterion based on time (24 hours). All structures were attempted ten times by each combination of Eterna100-version/Turner-version. Resulting sequences can be found in [data/output](data/output) folder.
 
 Results were compared against other RNA inverse folding methods.
 
@@ -101,3 +100,8 @@ Examples:
 ./e_m2dRNAs 1 "..((((....))))((((....))))((((...))))" 50 2700 TURNER2004 0 1
 ./e_m2dRNAs 1 $(cat ../data/input/Eterna100-V1/eterna62.ss) 50 -60 turner1999 1 1
 ```
+### References:
+Álvaro Rubio-Largo, N. Lozano-García, J. M. Granado-Criado, and M. A. Vega-Rodr ́ıguez, “Solving the rna inverse folding problem through
+target structure decomposition and multiobjective evolutionary computation,” Applied Soft Computing, vol. 147, p. 110779, 2023
+
+https://doi.org/10.1016/j.asoc.2023.110779
