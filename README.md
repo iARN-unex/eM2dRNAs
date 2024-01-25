@@ -101,7 +101,7 @@ Examples:
 ./e_m2dRNAs 1 $(cat ../data/input/Eterna100-V1/eterna62.ss) 50 -60 turner1999 1 1
 ```
 ### References:
-Álvaro Rubio-Largo, N. Lozano-García, J. M. Granado-Criado, and M. A. Vega-Rodr ́ıguez, “Solving the rna inverse folding problem through
+Álvaro Rubio-Largo, N. Lozano-García, J. M. Granado-Criado, and M. A. Vega-Rodríguez, “Solving the rna inverse folding problem through
 target structure decomposition and multiobjective evolutionary computation,” Applied Soft Computing, vol. 147, p. 110779, 2023
 
 https://doi.org/10.1016/j.asoc.2023.110779
